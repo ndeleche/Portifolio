@@ -66,3 +66,14 @@ class Portifolio(models.Model):
 
     def __str__(self):
         return f'portifolio {self.id}'
+
+#  FEEDBACK SECTION
+
+
+class Feedback(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+    feedback = models.TextField()
+
+    def __str__(self):
+        return self.name

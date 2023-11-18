@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Home, About, Profile, Category, Skills, Portifolio
+from .models import Home, About, Profile, Category, Skills, Portifolio, Feedback
 
 # HOME
 admin.site.register(Home)
@@ -37,3 +37,6 @@ class AboutAdmin(admin.ModelAdmin):
 
 # PORTIFOLIO
 admin.site.register(Portifolio)
+
+
+admin.site.register(Feedback)

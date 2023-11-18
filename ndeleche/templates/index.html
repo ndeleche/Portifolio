@@ -132,24 +132,40 @@
                         <h3 class="contact__subtitle">PHONE</h3>
                         <span class="contact__text">+(255) 686 009 681</span>
 
-                        <h3 class="contact__subtitle">ADRESS</h3>
+                        <h3 class="contact__subtitle">ADDRESS</h3>
                         <span class="contact__text">DAR ES SALAAM, TANZANAIA</span>
                     </div>
 
-                    <form action="" class="contact__form">
+                    <form action="" class="contact__form" method="post">
+                        {% csrf_token %}
                         <div class="contact__inputs">
-                            <input type="text" placeholder="Name" class="contact__input">
-                            <input type="mail" placeholder="Email" class="contact__input">
+                            <input name="name"  type="text" placeholder="Name" class="contact__input" required>
+                            <input name="email" type="mail" placeholder="Email" class="contact__input" required>
                         </div>
 
-                        <textarea name="" id="" cols="0" rows="10" class="contact__input"></textarea>
+                        <textarea name="feedback" id="" cols="0" rows="10" class="contact__input" value="your feedback.." required></textarea>
 
-                        <input type="submit" value="Enviar" class="contact__button">
+                        <input type="submit" value="Submit" class="contact__button">
+
+                        {% if feedback_submitted %}
+
+                        <div id="feedback-message">
+                            <h3>Feedback has been submitted</h3>
+                        </div>
+                                                    
+                                <script>
+                                    // Automatically hide the feedback message after 5 seconds
+                                    setTimeout(function() {
+                                        document.getElementById("feedback-message").style.display = "none";
+                                    }, 5000);
+                                </script>
+                        {% endif %}
+
                     </form>
                 </div>
             </section>
         </main>
-
+            <br><br>
         <!--===== FOOTER =====-->
         <footer class="footer section">
             <div class="footer__container bd-grid">
