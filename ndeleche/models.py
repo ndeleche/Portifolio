@@ -23,6 +23,8 @@ class About(models.Model):
     career = models.CharField(max_length=20)
     description = models.TextField(blank=False)
     profile_img = models.ImageField(upload_to='profile/')
+    resume = models.FileField(
+        upload_to='resume/', default='NDELECHEHAMISNEW.pdf')
 
     updated = models.DateTimeField(auto_now=True)
 

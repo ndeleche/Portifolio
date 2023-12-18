@@ -1,0 +1,68 @@
+{% extends 'main.html' %}
+
+{% load static %}
+
+{% block title %} {% endblock %}
+
+{% block content %}
+   
+        <!--code here-->
+        
+<!--===== ABOUT =====-->
+<section class="about section" id="about">
+    <h2 class="section-title">About</h2>
+
+    <div class="about__container bd-grid">
+        <div class="about__img">
+            <img src="{{about.profile_img.url}}" alt="">
+        </div>
+
+        <div>
+            <h2 class="about__subtitle">{{ about.heading}}</h2>
+            <span class="about__profession">{{ about.career}}</span>
+            <p class="about__text">{{about.description}} </p>
+
+            <div class="about__social">
+                <a href="https://github.com/ndeleche" class="about__social-icon"><i class='bx bxl-github' ></i></a>
+                <a href="https://www.linkedin.com/in/ndeleche-hamis-16b36b286/?originalSubdomain=tz" class="about__social-icon"><i class='bx bxl-linkedin' ></i></a>
+                <a href="https://www.instagram.com/iamndeleche/?next=%2F" class="about__social-icon"><i class='bx bxl-instagram' ></i></a>
+            </div>
+        </div>
+    </div>
+    
+<center>
+    <div class="">
+        <div class="row">
+            <div id="button">
+                <center>
+                    <h2>Download CV</h2>
+                    <p>Click the button below to download the CV in PDF format.</p>
+                </center>
+            </div>
+            <div class="col-md-6">
+                <!-- Add a download link for your PDF file -->
+                <a href="{{about.resume.url}}" class="button">
+                    <span style="vertical-align:middle">Download</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</center>
+
+</section>
+
+
+
+<br><br>
+
+{% include 'footer.html' %}
+        
+    {% endblock %}
+
+
+
+
+
+
+
+

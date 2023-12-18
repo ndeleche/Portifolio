@@ -1,0 +1,52 @@
+{% extends 'main.html' %}
+
+{% load static %}
+
+{% block title %} {% endblock %}
+
+{% block content %}
+   
+        <!--code here-->
+
+        
+<!--===== SKILLS =====-->
+<section class="skills section" id="skills">
+    <h2 class="section-title">Skills & Technologies </h2>
+
+    <div class="skills__container bd-grid">
+        <div class="skills__box">
+        
+        {% for category in categories %}
+            <h3 class="skills__subtitle">{{category.name}}</h3>
+
+            {% for skills in category.skills_set.all %}
+            <span class="skills__name">{{skills.skill_name}}</span>
+            {% endfor %}
+
+        {% endfor %}
+
+        </div>
+
+        <div class="skills__img">
+            <img src="{% static 'assets/img/skill.png' %}" alt="">
+        </div>
+    </div>
+</section>
+
+
+<br><br>
+
+{% include 'footer.html' %}
+    {% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+

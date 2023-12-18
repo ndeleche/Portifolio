@@ -1,0 +1,90 @@
+{% extends 'main.html' %}
+
+{% load static %}
+
+{% block title %} {% endblock %}
+
+{% block content %}
+   
+        <!--code here-->
+        
+<!--===== CONTACT =====-->
+<section class="contact section" id="contact">
+    <h2 class="section-title">Contact</h2>
+<center>
+    {% if feedback_submitted %}
+
+    <div id="feedback-message">
+        <h3>Feedback has been submitted</h3>
+    </div>
+
+    <script>
+        // Automatically hide the feedback message after 5 seconds
+        setTimeout(function() {
+            document.getElementById("feedback-message").style.display = "none";
+        }, 5000);
+        
+        // Prevent scrolling to the top after form submission
+        document.querySelector('.contact__form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission behavior
+
+            // Your form submission logic here
+            // ...
+
+            // Display feedback message and set timeout to hide it
+            document.getElementById("feedback-message").style.display = "block";
+            setTimeout(function() {
+                document.getElementById("feedback-message").style.display = "none";
+            }, 5000);
+        });
+    </script>
+    {% endif %}
+
+
+
+    <div class="contact__container bd-grid">
+        <div class="contact__info">
+            <h3 class="contact__subtitle">EMAIL</h3>
+            <span class="contact__text">ndelechehamis@gmail.com</span>
+
+            <h3 class="contact__subtitle">PHONE</h3>
+            <span class="contact__text">+(255) 686 009 681</span>
+
+            <h3 class="contact__subtitle">ADDRESS</h3>
+            <span class="contact__text">DAR ES SALAAM, TANZANAIA</span>
+        </div>
+
+        <form action="" class="contact__form" method="post">
+        {% csrf_token %}
+        <div class="contact__inputs">
+            <input name="name"  type="text" placeholder="Name" class="contact__input" required>
+            <input name="email" type="mail" placeholder="Email" class="contact__input" required>
+        </div>
+
+        <textarea name="feedback" id="" cols="0" rows="10" class="contact__input" value="your feedback.." required></textarea>
+
+        <input type="submit" value="Submit" class="contact__button">
+
+       
+
+    </form>
+    </div>
+</section>
+
+
+
+<br><br>
+
+{% include 'footer.html' %} 
+
+
+        
+    {% endblock %}
+
+
+
+
+
+
+
+

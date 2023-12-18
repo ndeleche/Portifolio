@@ -1,0 +1,47 @@
+{% extends 'main.html' %}
+
+{% load static %}
+
+{% block title %} {% endblock %}
+
+{% block content %}
+   
+        <!--code here-->
+
+        
+<!--===== PORTFOLIO =====-->
+<section class="portfolio section" id="portfolio">
+    <h2 class="section-title">Portfolio</h2>
+
+    <div class="portfolio__container bd-grid">
+
+        {% for portifolio in portifolios %}
+
+        <div class="portfolio__img">
+           
+            <img src="{{portifolio.image.url}}" alt="">
+
+            <div class="portfolio__link">
+                <a href="{{portifolio.link}}" class="portfolio__link-name">View details</a>
+            </div>
+        </div>
+        {% endfor %}
+        
+    </div>
+</section>
+
+<br><br>
+
+{% include 'footer.html' %}  
+
+
+        
+    {% endblock %}
+
+
+
+
+
+
+
+
